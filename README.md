@@ -1,10 +1,10 @@
 # Binance Spot Order placer
-This cli application places list of orders as soon as possible on the Binance spot market.
+This cli application places list of orders as soon as possible on the Binance spot market. A throttler is implemented in `src/cex/core/throttler.py`to prevent ip from being banned. Order placement code can be found in `src/cex/binance/order.py`
 
 ## Setup and Install
 Clone the project and enter the project dir.
 ```
-git clone {github url} && cd {project dir}
+git clone https://github.com/zazeng/order-placer.git && cd order-placer
 ```
 Ensure python version >= 3.10
 ```
