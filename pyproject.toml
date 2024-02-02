@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+exclude = [
+  ".vscode",
+  "data",
+  "*.pdf",
+  "*.env",
+]
+
+[tool.hatch.build.targets.wheel] 
+packages = ["src/order_placer"]
+
+[project]
+name = "order-placer"
+version = "1.0.0"
+dependencies = [
+    "aiohttp==3.9.1",
+    "python-dotenv==1.0.1",
+    "typing_extensions==4.9.0"
+]
+requires-python = ">=3.10"
+authors = [
+  {name = "Zeng Zhuang An", email = "zhuangan91@gmail.com"},
+]
+description="place list of limit orders as soon as possible on the binance spot market"
+readme = "README.MD"
+
+[project.scripts]
+order-placer = "order_placer.cli:main"
